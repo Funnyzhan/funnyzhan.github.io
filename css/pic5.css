@@ -7,13 +7,6 @@ html,body{
     padding: 0px;
 }
 
-body{
-    color: white;
-    background-color: black;
-    /* background-color: white; */
-    animation: openScene 2s ease 0s 1;
-}
-
 #bar{
     width: 1%;
     height: 100%;
@@ -21,7 +14,15 @@ body{
     left: 0%;
     /* animation: openScene 1.5s ease 0s 1; */
     z-index: 2;
-    /* background-color: #ffee00; */
+}
+
+#rightBar{
+    width: 0%;
+    position: absolute;
+    left: 100%;
+    z-index: 2;
+    transition:all 0.6s;
+    background-color: black;
 }
 
 #topLabel{
@@ -33,12 +34,20 @@ body{
     transition:all 0.6s;
 }
 
+#rightCaption{
+    float: right;
+    margin: 2.5% 5.5% 0% 0%;
+    z-index: 3;
+    cursor: pointer;
+    transition: all 0.6s;
+}
 
 #leftCaption{
     float: left;
     margin: 2.5% 0% 0% 5%;
     z-index: 2;
     cursor: pointer;
+    transition: all 0.6s;
 }
 
 /* 字体变色 */
@@ -82,86 +91,96 @@ body{
     transition: all 0.6s;
 }
 
-#pos{
-    position: fixed;
-    top: 0px;
-    right: 0px;
-    background-color: black;
-    height: 0px;
-    width: 0px;
-}
-
 #container{
-    /* text-align: center; */
-    /* position: relative; */
-    width:100%; 
-    height:100%;
-    margin: 500px  0px;
-    padding-bottom: 1500px;
-}
-
-#pathDiv{
-    /* margin: 200px auto; */
-    width:100%; 
-    height:100%;
-    text-align: center;
-}
-
-
-.words{
-    width: 400px;
-    min-height: 120px;
-    position: absolute;
-    font-size: 18px;
+    padding: 2% 0% 5% 0%;
+    width: 100%;
     text-align: justify;
-    padding: 10px;
-    border-radius: 20px 20px;
+    transition:all 0.6s;
+}
+
+#tittle{
+    font-size: 25px;
     font-weight: bold;
-    transition: all 0.6s;
-    /* text-indent:2em; */
+    padding: 0 17px;
+}
+
+#essay{
+    max-width: 740px;
+    margin: 0 auto;
+    font-size: 18px;
+}
+
+#essay>div{
+    margin-top: 24px;
+}
+
+.pDiv{
+    padding: 0 17px;
+    margin-bottom: -10px;
+}
+
+.pDiv>p{
+    display: inline;
+}
+
+.imgDiv{
+    text-align: center;
     
 }
 
-.t{
-    /* display: inline-block; */
-    margin: 0 auto;
-    font-size: 32px;
-    font-weight: bold;
-    text-align: center;
+.imgDiv>img{
+    border-radius: 10px;
+    max-width: 650px;
 }
 
-#word0{
-    padding-top: 20px;
-    background-color: rgb(235,122,139);
-}
-
-#word1{
-    padding-top: 20px;
-    background-color: rgb(235,122,139);
-}
-
-#word2{
-    background-color: rgb(166,152,245);
-}
-
-#word3{
-    background-color: rgb(135,222,210);
-}
-
-#word4{
-    background-color: rgb(203,245,137);
-}
-
-#word5{
-    background-color: rgb(235,196,131);
+.paraDiv{
+    padding: 0 17px;
 }
 
 /* 开场淡入 */
 @keyframes openScene {
     0% {
-        opacity: 0;
+        width: 1%;
+        left: 0%;
+    }
+    50%{
+        width: 100%;
+        left: 0%;
     }
     100% {
-		opacity: 1;
+        width: 0%;
+        left: 100%;
+    }
+}
+
+/* about页面切换专用 */
+@keyframes openScene2 {
+    0% {
+        width: 1%;
+        left: 0%;
+    }
+    75% {
+        width: 100%;
+        left: 0%;
+    }
+    100% {
+        width: 100%;
+        left: 0%;
+    }
+}
+
+/* 淡出 */
+@keyframes endScene {
+    0% {
+        width: 1%;
+        left: 99%;
+    }
+    75% {
+        width: 100%;
+        left: 0%;
+    }
+    100% {
+        width: 100%;
+        left: 0%;
     }
 }
